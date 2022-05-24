@@ -10,7 +10,7 @@ function returnText(){
         output.innerHTML = "Klick mich für das erste Jahr" 
         output.style.textDecoration = "underline"
 
-        case "2DfA":
+        case "2Dfa":
         output.href="2es-Jahr.html" 
         output.innerHTML = "Klick mich für das zweite Jahr" 
         output.style.textDecoration = "underline"
