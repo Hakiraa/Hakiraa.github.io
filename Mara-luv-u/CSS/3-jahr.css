@@ -1,0 +1,31 @@
+body{
+    
+    margin: 0px;
+    background-color: black;
+    background-image: url("3-jahr.jpg");
+    background-position: 430px;
+}
+p{
+    color:rgba(247, 212, 16, 0.807);
+    font-family: Arial;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+.text1{
+    margin-top: 40px;
+    margin-bottom:10px;
+}
+.text2{
+    margin-bottom:10px;
+}
+.text3{
+    margin-bottom:300px;
+}

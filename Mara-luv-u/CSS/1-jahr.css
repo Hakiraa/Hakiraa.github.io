@@ -1,0 +1,36 @@
+
+body{
+    margin: 0;
+    background-color: black;
+    background-image: url("1-jahr.jpg");
+    background-position-x: center;
+    background-position-y: -30px;
+}
+p{
+    color: rgb(173,145,121);
+    font-family: Arial;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+.subtitle{
+    margin-top: 60px;
+}
+.text-1{
+    margin-top: 20px;
+}
+.text-2{
+    margin-top: 330px;
+    margin-bottom: 50px;
+}
+.author{
+    margin-bottom: 5px;
+    font-family: italic;
+}
