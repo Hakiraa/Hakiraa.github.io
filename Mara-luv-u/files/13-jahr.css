@@ -2,11 +2,15 @@ body{
     
     margin: 0px;
     background-color: black;
-    background-image: url("2-jahr.jpg");
+    background-image: url("13-jahr.jpg");
 }
 p{
-    color: rgb(173,145,121);
+    background-color: rgba(4, 4, 2, 0.8);
+    padding: 10px;
+    color:rgb(235, 213, 134);
+    font-size: 20px;
     font-family: Arial;
+    font-weight: bold;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 0;
@@ -18,8 +22,11 @@ p{
     font-size: 50px;
     margin-top: 30px;
 }
-.text{
-    margin-top: 40px;
-    color:rgb(223, 183, 148);
-    margin-bottom: 300px;
+.text1{
+    margin-top: 50px;
+    margin-bottom: 3000px;
+}
+.text2{
+    
+    margin-bottom: 20px;
 }

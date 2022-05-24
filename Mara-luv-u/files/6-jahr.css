@@ -1,14 +1,18 @@
-
 body{
-    margin: 0;
+    
+    margin: 0px;
     background-color: black;
-    background-image: url("1-jahr.jpg");
-    background-position-x: center;
-    background-position-y: -30px;
+    background-image: url("6-jahr.jpg");
+    background-position-x: 30px;
+    background-position-x: 90px;
 }
 p{
-    color: rgb(173,145,121);
+    background-color: rgba(4, 4, 2, 0.8);
+    padding: 10px;
+    color:rgb(252,212,150);
+    font-size: 20px;
     font-family: Arial;
+    font-weight: bold;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 0;
@@ -20,17 +24,7 @@ p{
     font-size: 50px;
     margin-top: 30px;
 }
-.subtitle{
-    margin-top: 60px;
-}
-.text-1{
+.text1{
     margin-top: 20px;
-}
-.text-2{
-    margin-top: 330px;
     margin-bottom: 50px;
-}
-.author{
-    margin-bottom: 5px;
-    font-family: italic;
 }
