@@ -9,17 +9,26 @@ function returnText(){
         output.href="1es-Jahr.html" 
         output.innerHTML = "Klick mich für das erste Jahr" 
         output.style.textDecoration = "underline"
-        console.log("a") 
 
         case "2DfA":
+        output.href="2es-Jahr.html" 
+        output.innerHTML = "Klick mich für das zweite Jahr" 
+        output.style.textDecoration = "underline"
+
         break;
-
-
         case "3sDf":
+            output.href="3es-Jahr.html" 
+            output.innerHTML = "Klick mich für das dritte Jahr" 
+            output.style.textDecoration = "underline"
+    
+            
         break;
 
 
         case "4jAk":
+            output.href="4es-Jahr.html" 
+            output.innerHTML = "Klick mich für das Vierte Jahr" 
+            output.style.textDecoration = "underline"
         break;
 
 
