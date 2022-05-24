@@ -9,7 +9,8 @@ function returnText(){
         output.href="1es-Jahr.html" 
         output.innerHTML = "Klick mich für das erste Jahr" 
         output.style.textDecoration = "underline"
-
+        break;
+        
         case "2Dfa":
         output.href="2es-Jahr.html" 
         output.innerHTML = "Klick mich für das zweite Jahr" 

@@ -1,0 +1,42 @@
+body{
+    
+    margin: 0px;
+    background-color: black;
+    background-image: url("4-jahr.jpg");
+    background-position-x: 30px;
+    background-position-x: 90px;
+}
+p{
+    color:rgba(247, 212, 16, 0.807);
+    font-family: Arial;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+.text1{
+    margin-top: 30px;
+}
+.text2{
+    margin-top: 15px;
+    margin-right: 100px;
+}
+.text3{
+    margin-top: 15px;
+    margin-right: 50px;
+}
+.text4{
+    margin-top: 15px;
+    margin-right: 60px;
+}
+.text5{
+    margin-top: 15px;
+    margin-right: 100px;
+    margin-bottom: 200px;
+}
