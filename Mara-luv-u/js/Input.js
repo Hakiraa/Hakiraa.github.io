@@ -44,15 +44,15 @@ function returnText(){
 
 
         case "7aAd":
-        output.href="7es-Jahr.html" 
-        output.innerHTML = "Klick mich für das Siebte Jahr" 
+        output.href="https://www.youtube.com" 
+        output.innerHTML = "Klick mich für das Siebte Jahr(Von Quinn (die kleine hure))" 
         output.style.textDecoration = "underline"
         break;
 
 
         case "8fRa":
         output.href="8es-Jahr.html" 
-        output.innerHTML = "Klick mich für das achte Jahr (Von Quinn (die kleine hure))" 
+        output.innerHTML = "Klick mich für das achte Jahr (von Ilvi(empfehle handy im querformat))" 
         output.style.textDecoration = "underline"
         break;
 
