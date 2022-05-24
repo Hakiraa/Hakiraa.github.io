@@ -44,7 +44,7 @@ function returnText(){
 
 
         case "7aAd":
-        output.href="https://www.youtube.com" 
+        output.href="https://www.youtube.com/watch?v=4ppvRjQRCVQ" 
         output.innerHTML = "Klick mich für das Siebte Jahr(Von Quinn (die kleine hure))" 
         output.style.textDecoration = "underline"
         break;
