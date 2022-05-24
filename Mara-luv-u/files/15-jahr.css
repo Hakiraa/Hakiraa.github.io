@@ -1,0 +1,30 @@
+body{
+    
+    margin: 0px;
+    background-color: black;
+    background-image: url("15-jahr.jpg");
+    background-position-x: -190px;
+    
+}
+p{
+    background-color: rgba(4, 4, 2, 0.8);
+    padding: 10px;
+    color:rgb(235, 213, 134);
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+.text1{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
