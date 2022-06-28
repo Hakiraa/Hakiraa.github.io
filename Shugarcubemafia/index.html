@@ -6,12 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/index.css">
   <link href="http://fonts.cdnfonts.com/css/american-typewriter" rel="stylesheet">
-  <title>Main</title>
+  <title>Sugarcubemafia</title>
 </head>
 <body>
+    <img id="menu-open" src="CSS/menu.png" height="30" >
+  <div class="menu-mob">
+    <img src="CSS/Close.png" id="Close-cross" height="30px" width="30px">
+    <a class="link-menu-mob">&bull; Shop</a>
+    <a class="link-menu-mob">&bull; Gigs</a>
+    <a class="link-menu-mob">&bull; Lorem</a>
+  </div>
   <div class="topbar">
     <div class="header-left">
-      <button class="titleB">Gigs</button>
+      <a href="Gigs.html"><button class="titleB">Gigs</button></a>
       <button class="titleB">Shop</button>
       <button class="titleB">Lorem</button>
     </div>
@@ -34,8 +41,39 @@
     </div>
   </div>
   <div class ="contect-us">
-    
+    <ul id="C-us">
+      <li> E-mail: momingen@web.de</li>
+      <li> Phone: 42069</li>
+      <li> Lorem: Ipsum</li>
+    </ul>
+    <div class="link">
+      <a target="_blank" href="https://discord.gg/mNDrE6s3">
+      <img id="discord" src="CSS/discord_logo.png" height="77" width="77">
+      </a>
+      <a target="_blank" href="https://instagram.com/sugarcubemafia?igshid=YmMyMTA2M2Y=">
+      <img id="instagram" src="CSS/Instagram_logo.png" height="60" width="60"> 
+      </a>
+    </div>
   </div>
-  <p id="a">a</p>
+
+  <script>
+    const mobileNavButton = document.getElementById('menu-open')
+          mobileExitButton = document.getElementsById('Close-cross')
+          mobileNav = document.getElementsByClassName('menu-mob');
+    
+    mobileNavButton.addEventListener('click', () => {
+      mobileNav.classList.add('activate');
+
+    })
+    mobileExitButton.addEventListener('click', () => {
+      mobileNav.classList.remove('activate');
+
+    })
+
+
+  </script>
+
+
+
 </body>
 </html>

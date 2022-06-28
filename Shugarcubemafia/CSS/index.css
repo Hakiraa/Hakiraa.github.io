@@ -1,117 +1,239 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(44, 43, 43);
 }
 
 p{
     font-family: Arial;
 }
 
-
-
 .topbar{
     background-color: rgba(0, 0, 0, 0.774);
     padding: 0px;
     padding-bottom: 20px;
 }
+#menu-open{
+    position:absolute;
+    right: 10px;
+    top:17px
+}
+
+
+.menu-mob{
+
+    display: none;
+
+    position: fixed;
+    font-family: Arial;
+    background-color: rgb(36, 36, 36);
+    height: 100vh;
+    width: 60%;
+    z-index: 999;
+    right: 0;
+    text-align: left;
+} 
+.menu-mob.activate{
+    display: block;
+
+}
+#Close-cross{
+    margin:20px;
+    float:right;
+    display: block;
+}
+.link-menu-mob{
+    font-size: 20px;
+    display: block;
+    margin: 30px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    
+}
+.link-menu-mob:hover{
+    text-decoration: underline;
+}
+
 .title{
-    font-size:50px;
-    text-align: center;
+    padding-top: 15px;
+    display: inline-block;
     margin:0;
     font-family: Arial;
     color: blueviolet;
     text-align: center;
-    display: inline-block;
-}
 
+}
 .headerleft{
     box-sizing: border-box;
     position: relative;
     margin-top: 20px;
 }
-.titleB{ 
-    background-color: blueviolet;
-    border-style: none;
-    border-radius: 30px;
-    font-size: 20px;
-    padding: 1px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-left: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: padding .2s;
-}
-.titleB:hover{
-    padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: blueviolet;
-}
-.titleB:active{
-    background-color: rgba(0, 0, 0, 0.151);
-    border-style: solid;
-    border-width: 2px;
-    border-color: blueviolet;
-    color: blueviolet;
+.titleB{
+    display: none;
 }
 .main-header{
+    font-size: 30px;
     box-sizing: border-box;
     position: relative;
     text-align: center;
 }
-
-
-
-
 .main-content{
     margin-top: 30px;
     
 }
 .main-text{
-    margin-left: 30px;
+    margin-left: 3%;
+    margin-right: 3%;
     box-sizing: border-box;
-    width: 40%;
-    font-size: 30px;
+    font-size: 20px;
     display: inline-block;
     background-color: blueviolet;
     padding: 30px;
     padding-bottom: 20px;
     padding-top:  20px;
     border-radius: 15px;
+    text-align: center;
 }
-.us{
-    margin:auto;
-    display: inline-block;
-    margin-left: 30px;
-    vertical-align: top;
-}
-.description{
-    margin-left: 5px;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.651);
-}
-.us-b{
-    margin-left: 20%;
-    margin-top: 30px;
-    display: block;
-    font-size: 50px;
 
 
-    background-color: blueviolet;
-    border-style: none;
-    border-radius: 30px;
-    padding: 1px;
-    padding-left: 25px;
-    padding-right: 300px;
-    cursor: pointer;
-    transition: padding .2s;
-}
-.us-b:hover{
-    padding-right: 350px;
-    padding-left: 30px;
-}
-#a{
-    margin-top: 3000px;
+@media only screen and (min-width: 1232px) {
+    #menu-open{
+        display: none;
+    }
+    .topbar{
+        background-color: rgba(0, 0, 0, 0.774);
+        padding: 0px;
+        padding-bottom: 20px;
+    }
+    .title{
+        font-size:50px;
+        text-align: center;
+        margin:0;
+        font-family: Arial;
+        color: blueviolet;
+        text-align: center;
+        display: inline-block;
+    }
+    
+    .headerleft{
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 20px;
+    }
+    .titleB{ 
+        display: inline-block;
+        background-color: blueviolet;
+        border-style: none;
+        border-radius: 30px;
+        font-size: 20px;
+        padding: 1px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-left: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: padding .2s;
+    }
+    .titleB:hover{
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: blueviolet;
+    }
+    .titleB:active{
+        background-color: rgba(0, 0, 0, 0.151);
+        border-style: solid;
+        border-width: 2px;
+        border-color: blueviolet;
+        color: blueviolet;
+    }
+    .main-header{
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+    }
+    
+    
+    
+    
+    .main-content{
+        margin-top: 30px;
+        
+    }
+    .main-text{
+        margin-left: 30px;
+        box-sizing: border-box;
+        width: 40%;
+        font-size: 30px;
+        display: inline-block;
+        background-color: blueviolet;
+        padding: 30px;
+        padding-bottom: 20px;
+        padding-top:  20px;
+        border-radius: 15px;
+    }
+    .us{
+        float: right;
+        margin-right: 10px;
+        display: inline-block;
+        margin-left: 30px;
+        vertical-align: top;
+    }
+    .description{
+        margin-left: 5px;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.651);
+    }
+    .us-b{
+        margin-top: 30px;
+        display: block;
+        font-size: 50px;
+        margin-left: auto;
+    
+        background-color: blueviolet;
+        border-style: none;
+        border-radius: 30px;
+        padding: 1px;
+        padding-left: 25px;
+        padding-right: 300px;
+        cursor: pointer;
+        transition: padding .2s;
+    }
+    .us-b:hover{
+        padding-right: 350px;
+        padding-left: 30px;
+    }
+    #a{
+        margin-top: 3000px;
+    }
+    .contect-us{
+        background-color: blueviolet;
+        margin-top: 30px;
+        margin-top: 15%;
+        padding: 10px;
+    }
+    #C-us{
+        font-family: Arial;
+        font-size: 20px;
+        display: inline-block;
+    }
+    .link{
+        margin-top: 20px;
+        float: right;
+    
+    
+    }
+    #instagram{
+        vertical-align: middle;
+        margin-right: 40px;
+    
+    }
+    #discord{
+        vertical-align: middle;
+        margin-right: 20px;
+    }
+    
+
 }
