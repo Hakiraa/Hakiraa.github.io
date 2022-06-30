@@ -42,7 +42,6 @@ p{
 #close-cross{
 
     margin:20px;
-    float:right;
     display: block;
     cursor: pointer;
 }
@@ -102,6 +101,98 @@ p{
 }
 
 
+.description{
+    font-size: 15px;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.651);
+}
+.us-b{
+    font-size: 20px;
+    margin-top: 20px;
+    display: block;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: blueviolet;
+    border-style: none;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 30px;
+}
+.contect-us{
+    display: block;
+}
+#BG{
+    right: -2%;
+    padding-right: 5%;
+    padding-left: 30px;
+    transition: padding .2s;
+}
+#BQ{
+    padding-right: 5%;
+    padding-left: 30px;
+    margin-top: 80px;
+    right: -2%;
+    transition: padding .2s;
+}
+#BQ:active{
+    padding-Right: 100px;
+}
+#BG:active{
+    padding-right: 70px;
+}
+#BJ{
+    padding-right: 30px;
+    padding-left: 5%;
+    left: -2%;
+    margin-top: 80px;
+    transition: padding .2s;
+}
+#BM{
+    padding-right: 30px;
+    padding-left: 5%;
+    left: -2%;
+    transition: padding .2s;
+}
+#BJ:active{
+    padding-left: 100px;
+} 
+#BM:active{
+    padding-left: 70px;
+}
+
+
+.contect-us{
+    background-color: blueviolet;
+    margin-top: 30px;
+    margin-top: 15%;
+    padding: 10px;
+    margin-top: 150px;
+    padding-bottom: 90px;
+}
+#C-us{
+    margin-left: -30px;
+    font-family: Arial;
+    font-size: 15px;
+    display: inline-block;
+}
+.link{
+    margin-top: 20px;
+    float: right;
+}
+#instagram{
+    vertical-align: middle;
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+
+}
+#discord{
+    vertical-align: middle;
+    margin-right: 20px;
+    height: 52px;
+    width: 52px;
+}
 @media only screen and (min-width: 1232px) {
     #menu-open{
         display: none;
@@ -209,9 +300,8 @@ p{
         padding-right: 350px;
         padding-left: 30px;
     }
-    #a{
-        margin-top: 3000px;
-    }
+
+
     .contect-us{
         background-color: blueviolet;
         margin-top: 30px;

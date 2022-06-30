@@ -39,10 +39,10 @@
       </div>
 
     <div class="us">
-      <button class="us-b">Mara<span class="description">Singer</span></button>
-      <button class="us-b">Johnatan<span class="description">Drummer</span></button>
-      <button class="us-b">Quinn<span class="description">Suitarist</span></button>
-      <button class="us-b">Julian<span class="description">Bass</span></button>
+      <button id="BM" class="us-b">Mara<span class="description">Singer</span></button>
+      <button id="BJ" class="us-b">Julian<span class="description">Bass</span></button>
+      <button id="BG" class="us-b">Johnatan<span class="description">Drummer</span></button>
+      <button id="BQ" class="us-b">Quinn<span class="description">Suitarist</span></button>
     </div>
   </div>
   <div class ="contect-us">
@@ -60,22 +60,19 @@
       </a>
     </div>
   </div>
-  <script>
 
+    
+
+  <script>
     const menuB = document.getElementById("menu-open");
     const menuE = document.getElementById("close-cross");
     const menu1 = document.getElementById("menu-mob-id");
-
-    alert("geht1");
-    
     menuB.addEventListener("click", function(){
         menu1.style.display ="block";
     },false)
     menuE.addEventListener("click", function(){
         menu1.style.display ="none";
     },false)
-
-
   </script>
 
 </body>
