@@ -193,7 +193,7 @@ p{
     height: 52px;
     width: 52px;
 }
-@media only screen and (min-width: 1232px) {
+@media only screen and (min-width: 1400px) {
     #menu-open{
         display: none;
     }
@@ -250,7 +250,7 @@ p{
         text-align: center;
     }
     
-    
+
     
     
     .main-content{
@@ -286,7 +286,7 @@ p{
         display: block;
         font-size: 50px;
         margin-left: auto;
-    
+        position: relative;
         background-color: blueviolet;
         border-style: none;
         border-radius: 30px;
@@ -295,11 +295,35 @@ p{
         padding-right: 300px;
         cursor: pointer;
         transition: padding .2s;
+        margin-right: 30px;
     }
     .us-b:hover{
         padding-right: 350px;
         padding-left: 30px;
     }
+    #BQ, #BG, #BJ, #BM{
+        left:auto;
+        right: auto;
+        margin-top: 30px;
+        display: block;
+        font-size: 50px;
+        margin-left: auto;
+        position: relative;
+        background-color: blueviolet;
+        border-style: none;
+        border-radius: 30px;
+        padding: 1px;
+        padding-left: 25px;
+        padding-right: 300px;
+        cursor: pointer;
+        transition: padding .2s;
+        margin-right: 30px;
+    }
+    #BQ:hover, #BG:hover, #BJ:hover, #BM:hover{
+        padding-right: 350px;
+        padding-left: 30px;
+    }
+
 
 
     .contect-us{
@@ -322,11 +346,15 @@ p{
     #instagram{
         vertical-align: middle;
         margin-right: 40px;
+        height: 60px;
+        width: 60px;
     
     }
     #discord{
         vertical-align: middle;
         margin-right: 20px;
+        height: 77px;
+        width: 77px;
     }
     
 
