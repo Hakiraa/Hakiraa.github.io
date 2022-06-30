@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/index.css">
+  <link href="http://fonts.cdnfonts.com/css/american-typewriter" rel="stylesheet">
+
+  <title>Sugarcubemafia</title>
+
+
+
+</head>
+<body>
+  <img id="menu-open" src="CSS/menu.png" height="30" width="30">
+  
+  <div class="menu-mob" id="menu-mob-id" style="display: none;">
+    <img src="CSS/Close.png" id="close-cross" height="30px" width="30px">
+    <a class="link-menu-mob">&bull; Shop</a>
+    <a class="link-menu-mob">&bull; Gigs</a>
+    <a class="link-menu-mob">&bull; Lorem</a>
+  </div>
+  <div class="topbar">
+    <div class="header-left">
+      <a href="Gigs.html"><button class="titleB">Gigs</button></a>
+      <button class="titleB">Shop</button>
+      <button class="titleB">Lorem</button>
+    </div>
+    <div class="main-header">
+      <span class="title"> Sugarcubemafia </span>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-text">
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      </p>
+      </div>
+
+    <div class="us">
+      <button class="us-b">Mara<span class="description">Singer</span></button>
+      <button class="us-b">Johnatan<span class="description">Drummer</span></button>
+      <button class="us-b">Quinn<span class="description">Suitarist</span></button>
+      <button class="us-b">Julian<span class="description">Bass</span></button>
+    </div>
+  </div>
+  <div class ="contect-us">
+    <ul id="C-us">
+      <li> E-mail: momingen@web.de</li>
+      <li> Phone: 42069</li>
+      <li> Lorem: Ipsum</li>
+    </ul>
+    <div class="link">
+      <a target="_blank" href="https://discord.gg/mNDrE6s3">
+      <img id="discord" src="CSS/discord_logo.png" height="77" width="77">
+      </a>
+      <a target="_blank" href="https://instagram.com/sugarcubemafia?igshid=YmMyMTA2M2Y=">
+      <img id="instagram" src="CSS/Instagram_logo.png" height="60" width="60"> 
+      </a>
+    </div>
+  </div>
+  <script>
+
+    const menuB = document.getElementById("menu-open");
+    const menuE = document.getElementById("close-cross");
+    const menu1 = document.getElementById("menu-mob-id");
+
+    alert("geht1");
+    
+    menuB.addEventListener("click", function(){
+        menu1.style.display ="block";
+    },false)
+    menuE.addEventListener("click", function(){
+        menu1.style.display ="none";
+    },false)
+
+
+  </script>
+
+</body>
+</html>
