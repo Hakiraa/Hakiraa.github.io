@@ -10,6 +10,7 @@ body{
     background-color: var(--russian-green);
     padding: 0px;
     margin: 0px;
+    font-family: Arial;
 }
 
 #background{
@@ -36,25 +37,39 @@ body{
     margin-bottom: 0px;
     font-size: 30px;
     color: var(--timberwolf);
-
+    font-weight: bold;
 }
 #titletext{
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 15px;
     color: var(--laurel-green);
+    font-weight:lighter;
 }
-.gebi-geschenki{
-    
+#background-img{
+    width: 100%;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;;
+    height: 500px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -40;
 }
 
 .gebi-geschenki button{
+    color: var(--laurel-green);
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: var(--brunswick-green);
     border-style: none;
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    font-size: 10px;
+    border-radius: 10px;
+
 }
-
-
-
