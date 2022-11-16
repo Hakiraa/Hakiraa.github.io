@@ -1,0 +1,192 @@
+:root{
+    --Darkgreen: #165B33;
+    --Green: #146B3A;
+    --Yellow: #F8B229;
+    --Orange: #EA4630;
+    --Red: #BB2528;
+}
+
+
+
+body{
+    margin: 0px;
+}
+#main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Darkgreen);
+
+}
+
+
+
+/*Türchen pos ------------------------------------------------------------*/
+.turchen{
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    text-align: center;
+}
+#turchen1{
+    left: 30px;
+    top: 50px;
+    width: 100px;
+    height: 180px;
+}
+#turchen2{
+    right: 20px;
+    top: 80px;
+    width: 180px;
+    height: 120px;
+}
+#turchen3{
+    left: 25px;
+    top: 300px;
+    width: 100px;
+    height: 180px;
+}
+#turchen4{
+    right: 30px;
+    top: 320px;
+    width: 150px;
+    height: 100px;
+}
+#turchen5{
+    left:60px;
+    top: 510px;
+    width: 120px;
+    height: 160px;
+}
+#turchen6{
+    right:30px;
+    top: 510px;
+    width: 100px;
+    height: 120px;
+}
+#turchen7{
+    left:30px;
+    top: 710px;
+    width: 100px;
+    height: 120px;
+}
+#turchen8{
+    Right:35px;
+    top: 700px;
+    width: 100px;
+    height: 120px;
+}
+#turchen9{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+#turchen10{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+#turchen11{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+
+#turchen12{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+
+#turchen13{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+
+#turchen14{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+
+#turchen15{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+#turchen16{
+    left:35px;
+    top: 850px;
+    width: 100px;
+    height: 120px;
+}
+
+
+
+
+
+
+
+
+
+.tur, .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.tur{
+    background-color: var(--Green);
+    transition: width, .8s;
+    vertical-align: middle;
+
+    z-index: 30;
+}
+
+
+
+
+
+
+.tur h1{
+    color: var(--Yellow);
+    
+    font-family: 'Franklin Gothic Medium';
+
+}
+
+#tur-1 h1{
+    padding-top: 36%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.links{
+    width: 100%;
+    overflow: hidden;
+    font-size: 30px;
+    margin-top: 40%;
+    display: block;
+    color: var(--Yellow)
+}
+
+
+.content{
+    background-color: var(--Red);
+}
