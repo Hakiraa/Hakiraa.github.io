@@ -2,22 +2,23 @@ const header = document.getElementById('header');
 const button = document.getElementById('button');
 const Entry = document.getElementById('numberentry');
 
-let x = 0;
-console.log(Math.floor(x / 2));
-console.log(Math.floor(x % 2));
+
 
 const test = function(){
     let retur = "";
     let inp = parseInt(Entry.value);
     let s = inp
     while (s > 0) {
-        s = Math.floor(s / 2);
         inp = Math.floor(s % 2);
+        s = Math.floor(s / 2);
+        console.log(inp);
 
-        retur = retur + inp;
+        retur = inp.toString() + retur;
     }
     return retur;
 };
 
-button.onclick = () => { console.log(test()); }
+button.onclick = () => {
+    header.innerHTML = "in binär: " + test();
+}
     
