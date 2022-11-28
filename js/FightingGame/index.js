@@ -63,7 +63,6 @@ const keys = {
 //enemy.render('red')
 
 console.log(player)
-
 function loop(){
     window.requestAnimationFrame(loop)
     c.fillStyle = 'black'  
@@ -80,9 +79,6 @@ function loop(){
     } 
 }
 loop()
-
-
-
 window.addEventListener('keydown', (event) => {
     switch (event.key){
         case 'd':
@@ -98,7 +94,6 @@ window.addEventListener('keydown', (event) => {
             player.velocity.y = -10
         break;
         }
-        
     }
     console.log(event.key)
 })
@@ -112,8 +107,6 @@ window.addEventListener('keyup', (event) => {
         break;
         case 'w':
             keys.w.pressed = false
-        break;
-        
-            
+        break; 
     }
 })
