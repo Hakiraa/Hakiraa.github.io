@@ -5,9 +5,7 @@ let Entry = document.getElementById('entry');
 
 
 const data_get = function(dataT, name){
-    
     return output;
-
 };
 console.log(readFile('Input.txt', 'utf-8',))
 
