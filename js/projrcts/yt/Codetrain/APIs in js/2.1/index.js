@@ -8,5 +8,5 @@ app.use(express.json({limit: "1mb"}));
 
 
 app.post('/api', (req, res) => {
-    console.log(req.body);
+    console.log(req);
 });
