@@ -1,13 +1,19 @@
-import fs from 'fs'
-
-var output = fs.readFileSync('data.txt')
 let Entry = document.getElementById('entry');
+
+
+
+async function getdata(){
+    const response = await fetch("data.json");
+    const data = await response.json();
+    console.log(data);
+};
 
 
 const data_get = function(dataT, name){
     return output;
 };
-console.log(readFile('Input.txt', 'utf-8',))
+
+//console.log(readFile('Input.txt', 'utf-8',))
 
 const keydetect = function(ent){
     if (ent == keyword) {
@@ -16,4 +22,4 @@ const keydetect = function(ent){
         return false;
     }
 };
-console.log(data_get())
+//console.log(data_get())
