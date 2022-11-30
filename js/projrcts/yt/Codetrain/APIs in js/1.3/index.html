@@ -14,18 +14,21 @@
 
     <style>
         #map { 
-            height: 500px; 
+            height: 40vmax; 
             width: 100%;
+        }
+        h1{
+            text-align: center;
         }
 
     </style>
 </head>
 <body>
     <h1>Where is the ISS?</h1>
-    <p>latitude: <span id="lan"></span><br>
+    <!-- <p>latitude: <span id="lan"></span><br>
     longitude: <span id="lon"></span><br>
     altitude: <span id="alt"></span>
-    </p>
+    </p> -->
     <div id="map"></div>
     	
     <script>
@@ -51,15 +54,15 @@
             const response = await fetch(api_url)
             const data = await response.json();
             const {latitude, longitude, altitude} = data;
-            document.getElementById("lan").innerHTML = latitude
-            document.getElementById("lon").innerHTML = longitude
-            document.getElementById("alt").innerHTML = altitude
+            // document.getElementById("lan").innerHTML = latitude
+            // document.getElementById("lon").innerHTML = longitude
+            // document.getElementById("alt").innerHTML = altitude
             if (firstime){
                 marker = L.marker([latitude, longitude]).addTo(map);
-                map.setView([latitude, longitude], 4)
+                map.setView([latitude, longitude], 2)
                 firstime = false;
-                map
             }
+            map.setView([latitude, longitude], )
             marker.setLatLng([latitude, longitude]); 
         }
         
