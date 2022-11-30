@@ -14,8 +14,8 @@
 
     <style>
         #map { 
-            height: 380px; 
-            width: 600px;
+            height: 500px; 
+            width: 100%;
         }
 
     </style>
@@ -29,40 +29,52 @@
     <div id="map"></div>
     	
     <script>
+
         const api_url = "https://api.wheretheiss.at/v1/satellites/25544"
+        let firstime = true;
         let marker;
+
         async function getsata(){
             const response = await fetch(api_url)
             const data = await response.json();
             console.log(data)
             const {latitude, longitude}= data;
-            marker = L.marker([latitude, longitude]).addTo(map);
+            
+            
         }
         getsata();
 
         
         async function getdata(){
+
+           
             const response = await fetch(api_url)
             const data = await response.json();
             const {latitude, longitude, altitude} = data;
             document.getElementById("lan").innerHTML = latitude
             document.getElementById("lon").innerHTML = longitude
             document.getElementById("alt").innerHTML = altitude
+            if (firstime){
+                marker = L.marker([latitude, longitude]).addTo(map);
+                map.setView([latitude, longitude], 4)
+                firstime = false;
+                map
+            }
             marker.setLatLng([latitude, longitude]); 
         }
         
-        
-        setInterval(() => {
-            getdata()
-        }, 1000);
-        
-
         const map = L.map('map').setView([0, 0], 1);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-    
+
+
+        getdata()
+
+        setInterval(() => {
+            getdata()
+        }, 1000);
     </script>
 </body>
 </html>
