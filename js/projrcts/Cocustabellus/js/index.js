@@ -1,13 +1,13 @@
 let Entry = document.getElementById('entry');
 
 api_url = 
-
+getdata();
 async function getdata(){
-    const response = await fetch(".json")
+    const response = await fetch('some.json')
     const data = await response.json();
     console.log(data);
 }
-getdata();
+
 
 const data_get = function(dataT, name){
     return output;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data selfie app</h1>
+    <p>Hello</p>
+    <p>
+    latitude: <span id="lan"></span>&deg;<br>
+    longitude: <span id="lon"></span>&deg;
+    </p>
+
+
+    <script>
+        if ("geolocation" in navigator) {
+            console.log("ye")
+            navigator.geolocation.getCurrentPosition(geolocation =>{
+                console.log(geolocation);
+            const lat = geolocation.coords.latitude
+            const lon = geolocation.coords.longitude
+
+            document.getElementById("lan").innerHTML = lat;
+            document.getElementById("lon").innerHTML = lon;;
+
+
+            const data = {
+                lat , lon
+            }
+            console.log(data);
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }
+            fetch("/api", options)
+            
+
+
+
+
+        });
+        } else {
+            console.log("nope")
+        }
+    </script>
+</body>
+</html>
