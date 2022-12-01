@@ -4,47 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.8.0/lib/p5.min.js"></script>
+    <script srs="https://cdn.jsdelivr.net/npm/p5@0.8.0/lib/addons/p5.dom.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Data selfie app</h1>
-    <p>Hello</p>
+    <p><a href="index.html">main</a>|<a href="all.html">data</a></p>
     <p>
     latitude: <span id="lan"></span>&deg;<br>
     longitude: <span id="lon"></span>&deg;
     </p>
-
+    <input id="inputfelt"></input>
+    <button id="b" onclick="upload_to_server()" >teext</butto>
 
     <script>
-        if ("geolocation" in navigator) {
-            console.log("ye")
-            navigator.geolocation.getCurrentPosition(geolocation =>{
-                console.log(geolocation);
-            const lat = geolocation.coords.latitude
-            const lon = geolocation.coords.longitude
-
-            document.getElementById("lan").innerHTML = lat;
-            document.getElementById("lon").innerHTML = lon;
-
-
-            const data = {
-                lat , lon
+        function setup(){
+            function getIn(){
+                const value = document.getElementById("inputfelt").value
+                return value;
             }
-            console.log(data);
+            function upload_to_server(){
+                console.log("uploding...")
+                if ("geolocation" in navigator) {
+                    navigator.geolocation.getCurrentPosition(async geolocation =>{
+                        console.log(geolocation);
+                    const lat = geolocation.coords.latitude
+                    const lon = geolocation.coords.longitude
 
-            const options = {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+                    document.getElementById("lan").innerHTML = lat;
+                    document.getElementById("lon").innerHTML = lon;
+                    const data = { lat , lon, input: getIn() }
+                    const options = {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    }
+                    const res = await fetch("/api", options)
+                    const json = await res.json()
+                    console.log(json)
+                    console.log("done!")
+                });
+            } else {
+                console.log("The browser does not support geolocation")
             }
-            fetch("/api", options)
-        });
-        } else {
-            console.log("nope")
+
         }
+
+        noCanvas();
+        const capture  = createCapture(VIDEO);
+    }
+    
+    
     </script>
 </body>
 </html>
