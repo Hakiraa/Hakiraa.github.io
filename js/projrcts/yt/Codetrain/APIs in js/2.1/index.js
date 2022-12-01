@@ -3,7 +3,8 @@ const fs = require('fs');
 const Datastore = require('nedb');
 const app = express();
 const port = 3000
-let savedata = []
+
+
 app.listen(port, () => console.log("listening on port " + port));
 app.use(express.static("public"));
 
@@ -11,10 +12,7 @@ const database = new Datastore("database.db");
 database.loadDatabase();
 
 
-
 app.use(express.json({limit: "1mb"}));
-
-
 app.post('/api', (req, res) => {
     const data = req.body
     data.timestamp = Date.now();
