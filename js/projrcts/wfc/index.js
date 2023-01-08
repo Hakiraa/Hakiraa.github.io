@@ -1,10 +1,22 @@
-//variables
 
-const canvasx = 1200
+//variables
+let canvasx = 800
+let DIM = 50
+// const Bufdim = localStorage.getItem("Dim")
+// const Bufsize = localStorage.getItem("Size")
+// if (Bufdim !== "") {
+  // DIM = Bufdim
+// }
+// if (Bufsize !== "") {
+  // canvasx = Bufsize
+// }
 const canvasy = canvasx
-const DIM = 10
+
+
+
 //----------------------------------------------------------------
 let img;
+let full = false
 let grid = []
 let tiles = []
 let tilerules = []
@@ -18,6 +30,11 @@ let LEFT_;
 let EMPTY_;
 let STRAIGHT_;
 let STRAIGHT_HOR_;
+
+let LEFTDOWN_;
+let LEFTUP_;
+let RIGHTDOWN_;
+let RIGHTUP_;
 //----------------------------------------------------------------
 const UPrules = [1, 1, -1, 1]
 const RIGHTrules = [1, 1, 1, -1]
@@ -27,8 +44,24 @@ const EMPTYrules = [-1, -1, -1, -1]
 const STRAIGHTrules = [1, -1, 1, -1]
 const STRAIGHT_HORrules = [-1, 1, -1, 1]
 
-tilerules.push(UPrules, RIGHTrules, DOWNrules, LEFTrules, EMPTYrules, STRAIGHTrules, STRAIGHT_HORrules) 
+const LEFTDOWNrules = [-1, -1, 1, 1]
+const LEFTUPrules = [1, -1, -1, 1]
+const RIGHTDOWNrules = [-1, 1, 1, -1]
+const RIGHTUPrules = [1, 1, -1, -1]
 
+tilerules.push(
+  UPrules,
+  RIGHTrules,
+  DOWNrules,
+  LEFTrules,
+  EMPTYrules,
+  STRAIGHTrules,
+  STRAIGHT_HORrules,
+  LEFTDOWNrules,
+  LEFTUPrules,
+  RIGHTDOWNrules,
+  RIGHTUPrules
+  ) 
 //----------------------------------------------------------------
 class Tile { //Tile constructor
   constructor(state, img, up, right, down, left, none, ege){
@@ -42,7 +75,7 @@ class Tile { //Tile constructor
 }// Tile
 //----------------------------------------------------------------
 function preload() { // set up grid and corners
-  console.log("preload starting...")
+console.log("preload starting...")
 
   UP_ = loadImage("tiles/Up.png");
   RIGHT_ = loadImage("tiles/Right.png");
@@ -51,11 +84,15 @@ function preload() { // set up grid and corners
   EMPTY_ = loadImage("tiles/Empty.png");
   STRAIGHT_ = loadImage("tiles/Straight.png");
   STRAIGHT_HOR_ = loadImage("tiles/Straight_Hor.png");
+  LEFTDOWN_ = loadImage("tiles/LeftDown.png");
+  LEFTUP_ = loadImage("tiles/LeftUp.png");
+  RIGHTDOWN_ = loadImage("tiles/RightDown.png");
+  RIGHTUP_ = loadImage("tiles/RightUp.png");
 
-  tiles.push(UP_, RIGHT_,DOWN_, LEFT_,EMPTY_, STRAIGHT_,STRAIGHT_HOR_);
-  console.log("Tiles loaded")
+  tiles.push(UP_, RIGHT_,DOWN_, LEFT_,EMPTY_, STRAIGHT_,STRAIGHT_HOR_, LEFTDOWN_, LEFTUP_,RIGHTDOWN_,RIGHTUP_);
+console.log("Tiles loaded")
 
-  console.log("Preload Done!");
+console.log("Preload Done!");
 }//preload 
 
 
@@ -63,31 +100,50 @@ for(let i = 0; i < DIM * DIM; i++){ // Create grid
   let buffer;
   let w = undefined;
   let i_ = i+1 % DIM
+  let up = 0
+  let down = 0
+  let left = 0
+  let right = 0
+  if (i <= DIM -1){ //upper edge of the grid
+    up = -1
+    console.log(`UP: ${i}`)
+  }
+  if (i >= (DIM * DIM) - DIM){ //upper edge of the grid
+    down = -1
+    console.log(`DOWN: ${i}`)
+  }
+
   if (i_ % DIM == 0){ 
     w = "right"
+    right = -1
   }
   if (i % DIM == 0){
     w = "left"
+    left = -1
   }
-  buffer = new Tile(false, undefined, 0,0,0,0, `tile: ${i}`, w);
+  buffer = new Tile(false, undefined, up,right,down,left, `tile: ${i}`, w);
   grid.push(buffer)
+  
 }// grid
+debugList(grid , undefined)
 console.log("Grid loaded with: " + grid.length + " tiles!") 
  
 
 function setup(){
   createCanvas(canvasx, canvasy);
   clear()
+  frameRate(60)
   background(51);
 }// seting basic properties
 
 function draw(){
+  
 
 
-
-
-  createDATA();
+  if(!full){
+  createDATA(); 
   drawgrid();
+}
 }
 
 function drawgrid(){ // drawing all grid elements and grid
@@ -101,19 +157,23 @@ function drawgrid(){ // drawing all grid elements and grid
   _y2 = 0 
   let test = true
   for (let i = 0; i < DIM; i++){ // Cerating rows
-      line(x1, y1, canvasx, y1)
       stroke(111) 
       _x1 = 0 
       _x2 = 0
+      
       for (let i_ = 0; i_ < DIM ; i_++){ //Split rows up in to columns
           stroke(111)
           let buffer = grid[index]
+
           if (buffer.imag == undefined){
             _x2 += canvasy / DIM
             _x1 += canvasy / DIM
             _y1 = y1
-            _y2 = y1 - canvasy / DIM
-            line(_x1, _y1, _x2, _y2)
+            _y2 = y1 + canvasy / DIM
+
+            line(x1, y1, canvasx, y1)      
+            line(_x1, _y1, _x1, _y2)
+            
             
             index += 1 
             continue;
@@ -121,18 +181,17 @@ function drawgrid(){ // drawing all grid elements and grid
           if(buffer.state){
             image(buffer.imag,_x2, y1, canvasx/DIM, canvasx/DIM)
           }
-          //console.log(buffer)
-          //console.log(`Index: ${index},name ${buffer.test}, x1: ${_x1}, y1: ${_y1},_________x2: ${canvasx/4}, y2: ${canvasx/4}`)
-          
+          // console.log(buffer)
+          // console.log(`Index: ${index},name ${buffer.test}, x1: ${_x1}, y1: ${_y1},_________x2: ${canvasx/4}, y2: ${canvasx/4}`)
           _x2 += canvasy / DIM
           _x1 += canvasy / DIM
           _y1 = y1
           _y2 = y1 - canvasy / DIM
           
-          //console.log(index)
+          // console.log(index)
           index += 1
           
-          line(_x1, _y1, _x2, _y2)
+          //line(_x1, _y1, _x2, _y2)
         }
     y1 +=  canvasy / DIM
   }
@@ -166,37 +225,42 @@ function createDATA(){
       continue;
     }
   }// for each place in grid
-  if (Used_places.length == 0){ //set starter tile
-    addTile(ownRandom(0 , tiles.length - 1), ownRandom(0, grid.length - 1));
-  } else {
-    let higest = 0
-    let highest_list = []
-    let newtilepos;
-    for(var d = 0; d < Datagrid.length; d++) {
-      let disdata = Datagrid[d].data[1];
-      let displace = Datagrid[d].data[0];
-      
-      if (disdata > higest) {
-        highest_list.length = 0
-        highest_list.push(displace)
-        higest = disdata;
+  if(Used_places.length == DIM*DIM){
+    full = true;
+  }
+  if (!full){
+    if (Used_places.length == 0){ //set starter tile
+      addTile(ownRandom(0 , tiles.length - 1), ownRandom(0, grid.length - 1));
+    } else {
+      let higest = 0
+      let highest_list = []
+      let newtilepos;
+      for(var d = 0; d < Datagrid.length; d++) {
+        let disdata = Datagrid[d].data[1];
+        let displace = Datagrid[d].data[0];
 
-      } else if (disdata == higest) {
-        highest_list.push(displace)
-      } else {
-        console.log("skip"+ d)
+        if (disdata > higest) {
+          highest_list.length = 0
+          highest_list.push(displace)
+          higest = disdata;
+
+        } else if (disdata == higest) {
+          highest_list.push(displace)
+        } else {
+          // console.log("skip"+ d)
+        }
       }
-    }
-    newtilepos = highest_list[ownRandom(0, highest_list.length -1)]
-    console.log("--------------------------------")
-    console.log("newtilepos: ")
-    console.log(newtilepos)
-    let newtile = gettilbyrule(newtilepos)
-    
-    console.log("newtile: " + newtile)
-     console.log("--------------------------------")
-    addTile(newtile, newtilepos)
-  } // iff used places.len != 0
+      newtilepos = highest_list[ownRandom(0, highest_list.length -1)]
+      // console.log("--------------------------------")
+      // console.log("newtilepos: ")
+      // console.log(newtilepos)
+      let newtile = gettilbyrule(newtilepos)
+      
+      // console.log("newtile: " + newtile)
+      // console.log("--------------------------------")
+      addTile(newtile, newtilepos)
+    } // iff used places.len != 0
+  }
 }//addcontent
 function gettilbyrule(id){
   let ownroules = grid[id].roules
@@ -218,29 +282,30 @@ function gettilbyrule(id){
     }
   }//for each roule
   for (i = 0; i < posibletiles.length; i++){
-    console.log("Ownroules: " + ownroules)
-    console.log(id)
+    // console.log("Ownroules: " + ownroules)
+    // console.log(id)
     // console.log(tiles[posibletiles[i]])
-    console.log(tilerules[posibletiles[i]])
+    // console.log(tilerules[posibletiles[i]])
   }
 
   return posibletiles[ownRandom(0 , posibletiles.length -1)];  
 }
 
-function addTile(newtile, newtilepos){ //seting up rules to the sorounding pieces
+
+function addTile(newtile, newtilepos){ //setting up rules to the sorounding pieces
   //0:up 1:left 2:down 3:right
   //tiledetaktion(newtilepos)
-  console.log(newtilepos)
+  // console.log(newtilepos)
   grid[newtilepos].roules = tilerules[newtile]
-  console.log(grid[newtilepos].roules) 
+  // console.log(grid[newtilepos].roules) 
   const thisOB = grid[newtilepos];
   const thisRulUP = grid[newtilepos].roules[0];
   const thisRulRIGHT = grid[newtilepos].roules[1];
   const thisRulDOWN = grid[newtilepos].roules[2];
   const thisRulLEFT = grid[newtilepos].roules[3]; 
-  console.log("--------------------------------")
-  console.log(thisOB)
-  console.log("--------------------------------")
+  // console.log("--------------------------------")
+  // console.log(thisOB)
+  // console.log("--------------------------------")
     // /UP:
     if (newtilepos - DIM >= 0){
       grid[newtilepos - DIM].roules[2] = thisRulUP; 
@@ -272,11 +337,11 @@ function debugList(list, para){
     }
   }else{
     for (let i = 0; i < list.length; i++) {
-      console.log("--------------------------------")
-      console.log("Entry number: " + i);
-      console.log("value: ")
-      console.log(list[i][para])
-      console.log("--------------------------------")
+      // console.log("--------------------------------")
+      // console.log("Entry number: " + i);
+      // console.log("value: ")
+      // console.log(list[i][para])
+      // console.log("--------------------------------")
     }
   }
 }
