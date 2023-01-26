@@ -53,23 +53,24 @@ body {
 }
 
 .bigcard:nth-child(1):hover {
-    margin-top: -10vmin;
-    width: 50vmin;
+    margin-top: -5vmin;
+    width: 45vmin;
 }
 .bigcard:nth-child(2):hover {
-    margin-top: -10vmin;
-    width: 50vmin;
+    margin-top: -5vmin;
+    width: 45vmin;
 }
 .bigcard:nth-child(3):hover {
-    margin-top: -10vmin;
-    width: 50vmin;
-    margin-left: -10vmin;
+    margin-top: -5vmin;
+    width: 45vmin;
+    margin-left: -5vmin;
 }
 .bigcard:nth-child(4):hover {
-    margin-top: -10vmin;
-    margin-left: -10vmin;
-    width: 50vmin;
+    margin-top: -5vmin;
+    margin-left: -5vmin;
+    width: 45vmin;
 }
+
 
 #cardcontainer:hover > .bigcard:nth-child(1){
     transform: translate(-75%, 16%) rotate(-24deg);
@@ -85,8 +86,7 @@ body {
 }
 
 
-
-/* First card (4nht child)*/
+/* First card (4nht child) */
 .bigcard:nth-child(4) .Header{
     margin-left: 30px;
     margin-top:20px
