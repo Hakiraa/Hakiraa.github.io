@@ -1,5 +1,8 @@
 :root{
-
+    --yellow: #FFE74C;
+    --rose: #FF5964;
+    --blue: #38618C;
+    --green: #68B684;
 }
 
 
@@ -17,49 +20,56 @@ body {
 }
 #cardcontainer,
 .bigcard {
+
     width: 40vmin;
 }
 .card{
+
     background-color: rgba(255, 255, 255, 0.1);
     position: absolute;
-    transition: transform 500ms cubic-bezier(.83,1.43,.8,1.05);
-    
+    transition: transform 500ms cubic-bezier(.83,1.43,.8,1.05), width 50ms, margin-top 50ms, margin-left 50ms;
 }
 .bigcard {
     border-radius: 2vmin;
+    display: inline-block;
+    box-shadow: -30px 30px 30px rgba(0,0,0,0.3);
 }
 
 .bigcard:nth-child(1) {
     transform: translateX(-10%) rotate(-3deg);
-
+    background-color: var(--blue);
 }
 .bigcard:nth-child(2) {
     transform: translateX(-3%) rotate(-1deg);
-
+    background-color: var(--green);
 }
 .bigcard:nth-child(3) {
     transform: translateX(1%) rotate(2deg);
+    background-color: var(--rose);
 }
 .bigcard:nth-child(4) {
     transform: translateX(10%) rotate(7deg);
+    background-color: var(--yellow);
 }
 
 
 .bigcard:nth-child(1):hover {
+    margin-top: -10vmin;
     width: 50vmin;
-    transform: translate(0, -50%);
 }
 .bigcard:nth-child(2):hover {
+    margin-top: -10vmin;
     width: 50vmin;
-    transform: translate(0, -50%);
 }
 .bigcard:nth-child(3):hover {
+    margin-top: -10vmin;
     width: 50vmin;
-    transform: translate(0, -50%);
+    margin-left: -10vmin;
 }
 .bigcard:nth-child(4):hover {
+    margin-top: -10vmin;
+    margin-left: -10vmin;
     width: 50vmin;
-    transform: translate(0, -50%);
 }
 
 
