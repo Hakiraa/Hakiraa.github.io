@@ -1,0 +1,79 @@
+:root{
+
+}
+
+
+body {
+    margin: 0px;
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#cardcontainer,
+.card {
+    aspect-ratio: 5 / 7;
+}
+#cardcontainer,
+.bigcard {
+    width: 40vmin;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    transition: transform 500ms cubic-bezier(.83,1.43,.8,1.05);
+    
+}
+.bigcard {
+    border-radius: 2vmin;
+}
+
+.bigcard:nth-child(1) {
+    transform: translateX(-10%) rotate(-3deg);
+
+}
+.bigcard:nth-child(2) {
+    transform: translateX(-3%) rotate(-1deg);
+
+}
+.bigcard:nth-child(3) {
+    transform: translateX(1%) rotate(2deg);
+}
+.bigcard:nth-child(4) {
+    transform: translateX(10%) rotate(7deg);
+}
+
+
+.bigcard:nth-child(1):hover {
+    width: 50vmin;
+    transform: translate(0, -50%);
+}
+.bigcard:nth-child(2):hover {
+    width: 50vmin;
+    transform: translate(0, -50%);
+}
+.bigcard:nth-child(3):hover {
+    width: 50vmin;
+    transform: translate(0, -50%);
+}
+.bigcard:nth-child(4):hover {
+    width: 50vmin;
+    transform: translate(0, -50%);
+}
+
+
+
+
+#cardcontainer:hover > .bigcard:nth-child(1){
+    transform: translate(-75%, 16%) rotate(-24deg);
+}
+#cardcontainer:hover > .bigcard:nth-child(2){
+    transform: translate(-25%, 8%) rotate(-8deg);
+}
+#cardcontainer:hover > .bigcard:nth-child(3){
+    transform: translate(25%, 8%) rotate(8deg);
+}
+#cardcontainer:hover > .bigcard:nth-child(4){
+    transform: translate(75%, 16%) rotate(24deg);
+}
