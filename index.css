@@ -52,7 +52,6 @@ body {
     background-color: var(--yellow);
 }
 
-
 .bigcard:nth-child(1):hover {
     margin-top: -10vmin;
     width: 50vmin;
@@ -71,9 +70,6 @@ body {
     margin-left: -10vmin;
     width: 50vmin;
 }
-
-
-
 
 #cardcontainer:hover > .bigcard:nth-child(1){
     transform: translate(-75%, 16%) rotate(-24deg);
