@@ -5,8 +5,8 @@
     --green: #68B684;
 }
 
-
 body {
+    font-family: sans-serif;
     margin: 0px;
     background-color: black;
     height: 100vh;
@@ -83,3 +83,23 @@ body {
 #cardcontainer:hover > .bigcard:nth-child(4){
     transform: translate(75%, 16%) rotate(24deg);
 }
+
+
+
+/* First card (4nht child)*/
+.bigcard:nth-child(4) .Header{
+    margin-left: 30px;
+    margin-top:20px
+    
+}
+.bigcard:nth-child(4) .Header #name{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0px;
+}
+.bigcard:nth-child(4) .Header #subname{
+    font-size: 20px;
+    font-weight:lighter;
+    margin: 0px;
+}
+
