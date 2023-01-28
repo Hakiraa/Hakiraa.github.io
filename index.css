@@ -33,6 +33,7 @@ body {
     border-radius: 2vmin;
     display: inline-block;
     box-shadow: -30px 30px 30px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 .bigcard:nth-child(1) {
@@ -52,20 +53,20 @@ body {
     background-color: var(--yellow);
 }
 
-.bigcard:nth-child(1):hover {
+.inactive:nth-child(1):hover {
     margin-top: -5vmin;
     width: 45vmin;
 }
-.bigcard:nth-child(2):hover {
+.inactive:nth-child(2):hover {
     margin-top: -5vmin;
     width: 45vmin;
 }
-.bigcard:nth-child(3):hover {
+.inactive:nth-child(3):hover {
     margin-top: -5vmin;
     width: 45vmin;
     margin-left: -5vmin;
 }
-.bigcard:nth-child(4):hover {
+.inactive:nth-child(4):hover {
     margin-top: -5vmin;
     margin-left: -5vmin;
     width: 45vmin;
@@ -86,19 +87,26 @@ body {
 }
 
 
+
+
+
+
+
+
+
 /* First card (4nht child) */
 .bigcard:nth-child(4) .Header{
-    margin-left: 30px;
-    margin-top:20px
+    margin-left: 5vmin;
+    margin-top:2vmin;
     
 }
 .bigcard:nth-child(4) .Header #name{
-    font-size: 50px;
+    font-size: 5vmin;
     font-weight: bold;
     margin: 0px;
 }
 .bigcard:nth-child(4) .Header #subname{
-    font-size: 20px;
+    font-size: 2vmin;
     font-weight:lighter;
     margin: 0px;
 }
